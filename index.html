@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gift for you love ❤️</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: linear-gradient(#ffe6f2, #fff);
+      padding-top: 60px;
+    }
+    h1 { color: #e60073; }
+    .day {
+      margin: 12px;
+      font-size: 18px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      background: #ff4d88;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+    .locked {
+      background: #ccc;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎁 Gift for you love ❤️</h1>
+<p id="countdown"></p>
+
+<div id="days"></div>
+
+<script>
+const days = [
+  { name: "Rose Day 🌹", date: 7, link: "rose/" },
+  { name: "Propose Day 💍", date: 8, link: "propose/" },
+  { name: "Chocolate Day 🍫", date: 9, link: "chocolate/" },
+  { name: "Teddy Day 🧸", date: 10, link: "teddy/" },
+  { name: "Promise Day ♾️", date: 11, link: "promise/" },
+  { name: "Hug Day 🤗", date: 12, link: "hug/" },
+  { name: "Kiss Day 💋", date: 13, link: "kiss/" },
+  { name: "Valentine’s Day ❤️", date: 14, link: "valentine/" }
+];
+
+const today = new Date().getDate();
+const container = document.getElementById("days");
+
+days.forEach(d => {
+  const div = document.createElement("div");
+  div.className = "day";
+  if (today >= d.date) {
+    div.innerHTML = `${d.name}<br><a href="${d.link}">Open Gift</a>`;
+  } else {
+    div.innerHTML = `${d.name}<br><a class="locked">Locked 🔒</a>`;
+  }
+  container.appendChild(div);
+});
+
+// countdown
+const vDay = new Date("February 14, 2026").getTime();
+const now = new Date().getTime();
+const diff = vDay - now;
+document.getElementById("countdown").innerText =
+  diff > 0
+    ? `⏳ ${Math.floor(diff / (1000*60*60*24))} days left until Valentine’s Day ❤️`
+    : "❤️ Happy Valentine’s Day ❤️";
+</script>
+
+</body>
+</html>
