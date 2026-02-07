@@ -1,59 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rose Day</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #ffe6ea;
-      padding-top: 100px;
-      overflow: hidden;
-    }
-    button { padding: 12px 20px; font-size: 18px; }
-    .rose {
-      position: fixed;
-      bottom: -20px;
-      font-size: 26px;
-      animation: floatUp 6s linear infinite;
-    }
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-120vh); opacity: 0; }
-    }
-  </style>
-</head>
-<body>
-
-<h1>🌹 Happy Rose Day 🌹</h1>
-<button onclick="showMessage()">Click on Happy Rose Day</button>
-<p id="msg"></p>
-
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c4f24e4d3.mp3">
-</audio>
-
-<script>
-function showMessage() {
-  document.getElementById("msg").innerText =
-  "Hey baby, this is a virtual rose for long distance baby 💕";
-}
-
-setInterval(() => {
-  const r = document.createElement("div");
-  r.className = "rose";
-  r.innerText = "🌹";
-  r.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(r);
-  setTimeout(() => r.remove(), 6000);
-}, 500);
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
   <title>Rose Day 🌹</title>
   <style>
     body {
